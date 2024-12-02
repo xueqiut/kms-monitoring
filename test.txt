@@ -1,0 +1,7 @@
+ALBURL="http://patter-Patte-EPLla75b7Qh8-836255212.us-east-1.elb.amazonaws.com"
+curl --header "Content-Type: application/json" --request POST --data '{"Name":"Andy Jassy","Text":"Welcome to ReInvent 2020!"}' $ALBURL/encrypt
+
+curl --header "Content-Type: application/json" --request GET --data '{"Name":"Andy Jassy","Key":"<encrypt key>"}' $ALBURL/decrypt
+curl --header "Content-Type: application/json" --request GET --data '{"Name":"Andy Jassy","Key":"5070c5e2-d127-4697-9913-829b3a7d0700"}' $ALBURL/decrypt
+
+curl --header "Content-Type: application/json" --request GET --data '{"Name":"Andy Jassy","Key":"some-random-false-key"}' $ALBURL/decrypt
